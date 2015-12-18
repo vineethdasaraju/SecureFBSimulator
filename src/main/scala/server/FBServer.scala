@@ -1,6 +1,6 @@
 package server
 
-import java.security.PublicKey
+import java.security.{SecureRandom, PublicKey}
 import java.util
 
 import akka.actor._
@@ -23,20 +23,37 @@ case class getStats()
 case class printStats()
 case class postPhotoUpdate(query: String)
 case class PoststatusUpdate(query: String)
+case class SecurePoststatusUpdate(query: String)
 case class GetTimeline(timelineType: Int, query: String)
+case class SecuredGetTimeline(query: String)
 case class getPublicKeys(userRef: ActorRef, query: String)
 case class updatePublicKey(userRef: ActorRef, query: String)
 case class postPhotoRequest(userRef: ActorRef, query: String)
 case class statusUpdateRequest(userRef: ActorRef, query: String)
+case class SecureStatusUpdateRequest(userRef: ActorRef, query: String)
 case class TimelineRequest(userRef: ActorRef, timelineType: Int, query: String)
+case class SecuredTimelineRequest(userRef: ActorRef, query: String)
+case class getFriendsList(userRef: ActorRef ,query: String)
 
 case class UserConfig(category: Int, count: Int, Friends: Array[Int], statusUpdateInterval: Int, timelineInterval: Int, profileInterval: Int)
 case class FBConfig(serverIP: String, serverPort: Int, nOfUsers: Int, scale: Double, majorEvent: Int, statsInterval: Int, users: Array[UserConfig])
 case class statusUpdate(userId: Int, tags: List[Int], content: String, timestamp: Long)
+case class SecurestatusUpdate(userId: Int, content: String,RSAencryptedAESkey: String , timestamp: Long)
 case class Photo(userId: Int, tags: List[Int], content: String, timestamp: Long)
 case class PKey(userId: Int, pkey: String)
 case class PKeyRequest(userId: Int, friends: Array[Int])
 case class Timeline(userId:Int, timelineType: Int, statusUpdatesList: List[statusUpdate])
+case class SecureTimeline(userId:Int, statusUpdatesList: List[SecurestatusUpdate])
+case class friendsList(userId:Int , friends: ListBuffer[PKey])
+
+case class EncryptedAES(userId: Int , RSAencryptedAESkey: String)
+case class MessageWithEncryptedAES(userId: Int, AESencryptedMessage: String, keys : ListBuffer[EncryptedAES],timestamp: Long)
+
+
+//Security
+case class securedRandomIntegerToken(userRef: ActorRef ,query: String)
+case class verifySignature(userId:Int ,actual: String , signature: String )
+
 
 object MyJsonProtocol extends DefaultJsonProtocol {
   implicit val statusUpdateFormat = jsonFormat4(statusUpdate)
@@ -46,6 +63,11 @@ object MyJsonProtocol extends DefaultJsonProtocol {
   implicit val photoFormat = jsonFormat4(Photo)
   implicit val pKeyFormat = jsonFormat2(PKey)
   implicit val pKeyRequestFormat = jsonFormat2(PKeyRequest)
+  implicit val userFriendsFormat = jsonFormat2(friendsList)
+  implicit val EncryptedAESFormat = jsonFormat2(EncryptedAES)
+  implicit val MessageWithEncryptedAESFormat = jsonFormat4(MessageWithEncryptedAES)
+  implicit val SecureTimelineFormat = jsonFormat2(SecureTimeline)
+  implicit val SecurestatusUpdateFormat = jsonFormat4(SecurestatusUpdate)
 }
 
 import server.MyJsonProtocol._
@@ -55,8 +77,15 @@ class Friend {
   var start: Int = _
 }
 
+class groupsInfo{
+  var name: String = _
+  var users = new ListBuffer[UserInfo]()
+  var home_photoAlbum = new ListBuffer[Photo]()
+}
+
 class UserInfo {
   var name: String = _
+  var DSsecuredRandomInt: Int = _
   var id: Int = _
   var myFriends = new Array[Friend](7)
   // photographs
@@ -66,6 +95,7 @@ class UserInfo {
   // status updates
   var home_timeline = new ListBuffer[statusUpdate]()
   var user_timeline = new ListBuffer[statusUpdate]()
+  var secured_user_timeline = new ListBuffer[SecurestatusUpdate]()
   var tags_timeline = new ListBuffer[statusUpdate]()
   // public Key
   var publicKey: String = _
@@ -142,6 +172,23 @@ class statusUpdateService(userDatabase: Array[UserInfo], userRef: ActorRef) exte
       Server.stats.nOfRequests += 1
       Server.stats.nOfstatusUpdateRequests += 1
       context.stop(self)
+
+    case SecurePoststatusUpdate(query) =>
+
+      val encryptedStatusUpdate = query.parseJson.convertTo[MessageWithEncryptedAES]
+
+      for(userKey <- encryptedStatusUpdate.keys){
+        userDatabase(userKey.userId).secured_user_timeline .+=: (
+          new SecurestatusUpdate(encryptedStatusUpdate.userId,encryptedStatusUpdate.AESencryptedMessage,
+            userKey.RSAencryptedAESkey,encryptedStatusUpdate.timestamp)
+        )
+      }
+
+      userRef ! HttpResponse(status = 200, entity = "OK")
+      Server.stats.nOfRequests += 1
+      Server.stats.nOfstatusUpdateRequests += 1
+      context.stop(self)
+
   }
 }
 
@@ -151,6 +198,10 @@ class statusUpdateServer(userDatabase: Array[UserInfo]) extends Actor {
       //println("Creating service for user#" + id + ". Ref: " + client)
       val service = context.system.actorOf(Props(new statusUpdateService(userDatabase, userRef)))
       service ! PoststatusUpdate(query)
+    case SecureStatusUpdateRequest(userRef, query) =>
+      //println("Creating service for user#" + id + ". Ref: " + client)
+      val service = context.system.actorOf(Props(new statusUpdateService(userDatabase, userRef)))
+      service ! SecurePoststatusUpdate(query)
   }
 }
 
@@ -198,6 +249,29 @@ class photoPostService(userDatabase: Array[UserInfo], userRef: ActorRef) extends
       Server.stats.nOfRequests += 1
       Server.stats.noOfPhotoPostRequests += 1
       context.stop(self)
+  }
+}
+
+class DigitalSignature(userDatabase: Array[UserInfo]) extends Actor with DS{
+  def receive = {
+    case securedRandomIntegerToken(sender,query) =>
+      val userId = query.parseJson.convertTo[Int]
+      var value = getSecuredRandomInt()
+      userDatabase(userId).DSsecuredRandomInt = value
+      val retVal : JsonObject = new JsonObject
+      retVal.addProperty("SecretKey" ,Integer.toString(value))
+      sender ! HttpResponse(status = 200, entity = retVal.toString())
+
+    case verifySignature(userId , actual , signature) =>
+      var result = false
+      var value = userDatabase(userId).DSsecuredRandomInt
+      try {
+        if(actual.toInt == value)
+          result = true
+      } catch {
+        case e: Exception => 0
+      }
+      result && VerifyHash(userDatabase(userId).publicKey,actual,signature)
   }
 }
 
@@ -281,6 +355,20 @@ class TimelineService(userDatabase: Array[UserInfo], userRef: ActorRef) extends 
       Server.stats.nOfRequests += 1
       Server.stats.nOfTimelineRequests += 1
       context.stop(self)
+
+    case SecuredGetTimeline(query) =>
+      var statusUpdatesList: List[SecurestatusUpdate] = List[SecurestatusUpdate]()
+      val userId = query.parseJson.convertTo[Int]
+
+      statusUpdatesList = userDatabase(userId).secured_user_timeline.take(20).toList
+
+      userRef ! HttpResponse(status = 200,
+        entity = SecureTimeline(userId, statusUpdatesList).toJson.toString)
+      Server.stats.nOfRequests += 1
+      Server.stats.nOfTimelineRequests += 1
+      context.stop(self)
+
+
   }
 }
 
@@ -290,6 +378,10 @@ class TimelineServer(userDatabase: Array[UserInfo]) extends Actor {
       //println("Creating service for user#" + id + ". Ref: " + client)
       val service = context.system.actorOf(Props(new TimelineService(userDatabase, userRef)))
       service ! GetTimeline(timelineType, query)
+    case SecuredTimelineRequest(userRef, query) =>
+      //println("Creating service for user#" + id + ". Ref: " + client)
+      val service = context.system.actorOf(Props(new TimelineService(userDatabase, userRef)))
+      service ! SecuredGetTimeline(query)
   }
 }
 
@@ -311,12 +403,30 @@ class TimelineEngine(userDatabase: Array[UserInfo]) extends Actor {
   }
 }
 
+class getUserDetails(userDatabase: Array[UserInfo]) extends  Actor{
+
+  def receive = {
+    case getFriendsList( userRef, query) =>
+      //println("Creating service for user#" + id + ". Ref: " + client)
+      var userId: Int = query.parseJson.convertTo[Int]
+
+      var returnVal: friendsList = new friendsList(userId,ListBuffer[PKey]())
+      for(frnd <- userDatabase(userId).myFriends){
+        returnVal.friends += new PKey(frnd.start,userDatabase(frnd.start).publicKey)
+      }
+      userRef ! HttpResponse(status = 200,
+        entity = returnVal.toJson.toString)
+  }
+}
+
 class FBServer(userDatabase: Array[UserInfo], config: FBConfig) extends Actor {
   var statusUpdateEngine: ActorRef = _
   var photoPostEngine: ActorRef = _
   var timelineEngine: ActorRef = _
   var updatePublicKeyEngine: ActorRef = _
   var getPublicKeysEngine: ActorRef = _
+  var digitalSignature: ActorRef = _
+  var getuserDetails: ActorRef = _
 
   InitializeServer()
 
@@ -326,6 +436,8 @@ class FBServer(userDatabase: Array[UserInfo], config: FBConfig) extends Actor {
     timelineEngine = context.system.actorOf(Props(new TimelineEngine(userDatabase)), name = "TimelineEngine")
     updatePublicKeyEngine = context.system.actorOf(Props(new PublicKeyUpdateEngine(userDatabase)), name = "PublicKeyUpdateEngine")
     getPublicKeysEngine = context.system.actorOf(Props(new GetPublicKeysEngine(userDatabase)), name = "GetPublicKeysEngine")
+    digitalSignature = context.system.actorOf(Props(new DigitalSignature(userDatabase)))
+    getuserDetails = context.system.actorOf(Props(new getUserDetails(userDatabase)))
   }
 
   def receive = {
@@ -339,9 +451,17 @@ class FBServer(userDatabase: Array[UserInfo], config: FBConfig) extends Actor {
     case HttpRequest(POST, Uri.Path("/getPublicKeys"), _, entity: HttpEntity.NonEmpty, _) =>
       getPublicKeysEngine ! getPublicKeys(sender, entity.asString)
 
+    case HttpRequest(GET, Uri.Path("/getFriendsList"), _, entity: HttpEntity.NonEmpty, _) =>
+       getuserDetails ! getFriendsList(sender, entity.asString)
+
     case HttpRequest(POST, Uri.Path("/statusUpdate"), _, entity: HttpEntity.NonEmpty, _) =>
       //println("Received statusUpdate request")
       statusUpdateEngine ! statusUpdateRequest(sender, entity.asString)
+
+    case HttpRequest(POST, Uri.Path("/SecureStatusUpdate"), _, entity: HttpEntity.NonEmpty, _) =>
+      //println("Received statusUpdate request")
+      statusUpdateEngine ! SecureStatusUpdateRequest(sender, entity.asString)
+
 
     case HttpRequest(POST, Uri.Path("/postPhoto"), _, entity: HttpEntity.NonEmpty, _) =>
       //println("Received statusUpdate request")
@@ -351,6 +471,10 @@ class FBServer(userDatabase: Array[UserInfo], config: FBConfig) extends Actor {
       //println("Received home timeline request")
       timelineEngine ! TimelineRequest(sender, 0, entity.asString)
 
+    case HttpRequest(GET, Uri.Path("/securedTimeline"), _, entity: HttpEntity.NonEmpty, _) =>
+      //println("Received home timeline request")
+      timelineEngine ! SecuredTimelineRequest(sender, entity.asString)
+
     case HttpRequest(GET, Uri.Path("/tagsTimeline"), _, entity: HttpEntity.NonEmpty, _) =>
       //println("Received tags timeline request")
       timelineEngine ! TimelineRequest(sender, 1, entity.asString)
@@ -358,6 +482,10 @@ class FBServer(userDatabase: Array[UserInfo], config: FBConfig) extends Actor {
     case HttpRequest(GET, Uri.Path("/userTimeline"), _, entity: HttpEntity.NonEmpty, _) =>
       //println("Received user timeline request")
       timelineEngine ! TimelineRequest(sender, 2, entity.asString)
+
+    case HttpRequest(GET, Uri.Path("/getSecuredRandomInteger"), _, entity: HttpEntity.NonEmpty, _) =>
+      //println("Received user timeline request")
+      digitalSignature ! securedRandomIntegerToken (sender, entity.asString)
 
     case unknown: HttpRequest =>
       sender ! HttpResponse(status = 404, entity = s"$unknown: Sorry, this request cannot be processed.")

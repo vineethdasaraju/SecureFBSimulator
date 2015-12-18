@@ -1,16 +1,28 @@
 package client
 
+import com.google.gson.JsonObject
+
+import spray.json._
+
 /**
   * Created by vineeth on 12/15/15.
   */
 object Security extends App with AES with RSA{
+
+  val retVal : JsonObject = new JsonObject
+  retVal.addProperty("testing", "SecretKey")
+  val result = retVal.toString
+  var jsonresult = result.parseJson
+  var finalresult = jsonresult.asInstanceOf[JsObject].getFields("testing")(0).toString
+
+
 
   val plainText = "Hello World1213221"
   val AESkey = generateAESKey
   val ivector = "foo"
   println(AESkey.getEncoded.toString)
   println("alice: " + plainText)
-  val enc = encryptAES(AESkey, plainText, ivector)
+  val enc =  encryptAES(AESkey, plainText, ivector)
   println(new String(enc))
   val text = decryptAES(enc, AESkey, ivector)
   println("bob: " + text)

@@ -86,6 +86,11 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
   var statusUpdateCount: Int = _
   var friendlist = None: Option[friendsList]
 
+  if(!Authenticate()) {
+    println("failed to Authenticate")
+    context.stop(self)
+  }
+
   sendPublicKeyToServer
 
   waitForstatusUpdateActivity(Random.nextInt(myConfig.statusUpdateInterval))
@@ -101,6 +106,19 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
   }
 
 
+  def Authenticate() : Boolean = {
+    var future = IO(Http).ask(HttpRequest(GET, Uri(s"http://$server/getSecuredRandomInteger")).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
+    var response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+    val jsonSecuredInt = response.entity.asString.parseJson
+    val  securedInt = jsonSecuredInt.convertTo[Int]
+
+    future = IO(Http).ask(HttpRequest(GET, Uri(s"http://$server/getSecuredRandomInteger")).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
+    response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+    if(response.status.intValue != 200)
+      false
+    else
+      true
+  }
 
   def receive = {
 
@@ -261,5 +279,6 @@ object Client extends App {
       system.actorOf(Props(new User(nodeCount, server, config.users(category - 1), (config.nOfUsers.toDouble * config.scale).toInt, eventTime)), name = "user" + nodeCount.toString)
     }
   }
+
   println("All users created.")
 }

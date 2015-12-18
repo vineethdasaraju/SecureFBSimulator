@@ -77,7 +77,7 @@ case class messageWithEncryptedAES(userId: Int, AESencryptedMessage: String, key
 //Security
 case class securedRandomIntegerToken(userRef: ActorRef, query: String)
 
-case class verifySignature(userId: Int, actual: String, signature: String)
+case class verifySignature(userRef: ActorRef ,userId: Int, actual: String, signature: String)
 
 // Groups
 case class addUserToGroup(groupID: Int, userID: Int)
@@ -305,7 +305,7 @@ class DigitalSignature(userDatabase: Array[UserInfo]) extends Actor with DS {
       retVal.addProperty("SecretKey", Integer.toString(value))
       sender ! HttpResponse(status = 200, entity = retVal.toString())
 
-    case verifySignature(userId, actual, signature) =>
+    case verifySignature(sender, userId, actual, signature) =>
       var result = false
       var value = userDatabase(userId).DSsecuredRandomInt
       try {
@@ -314,7 +314,11 @@ class DigitalSignature(userDatabase: Array[UserInfo]) extends Actor with DS {
       } catch {
         case e: Exception => 0
       }
-      result && VerifyHash(userDatabase(userId).publicKey, actual, signature)
+      if( result && VerifyHash(userDatabase(userId).publicKey, actual, signature) ){
+        sender ! HttpResponse(status = 200)
+      }else{
+        sender ! HttpResponse(status = 400)
+      }
   }
 }
 
@@ -580,6 +584,10 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
 
     case HttpRequest(GET, Uri.Path("/getSecuredRandomInteger"), _, entity: HttpEntity.NonEmpty, _) =>
       digitalSignature ! securedRandomIntegerToken(sender, entity.asString)
+
+    case HttpRequest(GET, Uri.Path("/verifySignature"), _, entity: HttpEntity.NonEmpty, _) =>
+      digitalSignature ! verifySignature(sender, entity.asString)
+
 
     case HttpRequest(GET, Uri.Path("/getGroupTimeLine"), _, entity: HttpEntity.NonEmpty, _) =>
       fbGroupHandler ! getGroupTimeLine(sender, entity.asString)

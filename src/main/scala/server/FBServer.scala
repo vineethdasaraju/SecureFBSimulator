@@ -82,6 +82,8 @@ case class verifySignature(userId: Int, actual: String, signature: String)
 // Groups
 case class addUserToGroup(groupID: Int, userID: Int)
 
+case class getGroupMembers(userRef: ActorRef, query: String)
+
 case class getGroupTimeLine(userRef: ActorRef, query: String)
 
 case class addMemberToGroup(userRef: ActorRef, query: String)
@@ -501,6 +503,20 @@ class getUserDetails(userDatabase: Array[UserInfo]) extends Actor {
   }
 }
 
+class getGroupMembersRequest(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, fbGroup]) extends Actor {
+  def receive = {
+    case getGroupMembers(userRef, query) =>
+      var userID: Int = query.parseJson.convertTo[Int]
+
+      var returnVal: friendsList = new friendsList(userID, ListBuffer[pKey]())
+      for (frnd <- groupDatabase.get(userID).members) {
+        returnVal.friends += new pKey(frnd, userDatabase(frnd).publicKey)
+      }
+      userRef ! HttpResponse(status = 200,
+        entity = returnVal.toJson.toString)
+  }
+}
+
 class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, fbGroup], config: fbConfig) extends Actor {
   var statusUpdateEngine: ActorRef = _
   var photoPostEngine: ActorRef = _
@@ -510,6 +526,7 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
   var digitalSignature: ActorRef = _
   var getuserDetails: ActorRef = _
   var fbGroupHandler: ActorRef = _
+  var getGroupMembersRequest:ActorRef = _
 
   InitializeServer()
 
@@ -522,6 +539,7 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
     digitalSignature = context.system.actorOf(Props(new DigitalSignature(userDatabase)))
     getuserDetails = context.system.actorOf(Props(new getUserDetails(userDatabase)))
     fbGroupHandler = context.system.actorOf(Props(new FBGroupRequestHandler(userDatabase, groupDatabase)), name = "FBGroupsEngine")
+    getGroupMembersRequest = context.system.actorOf(Props(new getGroupMembersRequest(userDatabase, groupDatabase)), name = "FBGroupsHandlerEngine")
   }
 
   def receive = {
@@ -535,6 +553,9 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
 
     case HttpRequest(GET, Uri.Path("/getFriendsList"), _, entity: HttpEntity.NonEmpty, _) =>
       getuserDetails ! getFriendsList(sender, entity.asString)
+
+    case HttpRequest(GET, Uri.Path("/getGroupMembers"), _, entity: HttpEntity.NonEmpty, _) =>
+      getGroupMembersRequest ! getGroupMembers(sender, entity.asString)
 
     case HttpRequest(POST, Uri.Path("/statusUpdate"), _, entity: HttpEntity.NonEmpty, _) =>
       statusUpdateEngine ! statusUpdateRequest(sender, entity.asString)

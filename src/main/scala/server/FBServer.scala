@@ -74,10 +74,14 @@ case class encryptedAES(userId: Int, RSAencryptedAESkey: String)
 
 case class messageWithEncryptedAES(userId: Int, AESencryptedMessage: String, keys: util.HashMap[Int, encryptedAES], timestamp: Long)
 
+case class privateMessageWithEncryptedAES(senderId: Int, AESencryptedMessage: String, encAES: encryptedAES, timestamp: Long)
+
+case class getMessage(userRef: ActorRef, query: String)
+
 //Security
 case class securedRandomIntegerToken(userRef: ActorRef, query: String)
 
-case class verifySignature(userRef: ActorRef ,userId: Int, actual: String, signature: String)
+case class verifySignature(userRef: ActorRef, query: String)
 
 // Groups
 case class addUserToGroup(groupID: Int, userID: Int)
@@ -88,6 +92,10 @@ case class getGroupTimeLine(userRef: ActorRef, query: String)
 
 case class addMemberToGroup(userRef: ActorRef, query: String)
 
+case class DSObject(userId: Int, actual: String, signature: String)
+
+case class messagesObject(userID: Int, messages: ListBuffer[privateMessageWithEncryptedAES])
+
 case class groupTimeline(groupID: Int, listBuffer: ListBuffer[messageWithEncryptedAES])
 
 case class fbGroup(groupID: Int, timeline: ListBuffer[messageWithEncryptedAES], members: ListBuffer[Int])
@@ -95,6 +103,8 @@ case class fbGroup(groupID: Int, timeline: ListBuffer[messageWithEncryptedAES], 
 case class postMessageObject(groupID: Int, message: messageWithEncryptedAES, timestamp: Long)
 
 case class postMessageToGroup(userRef: ActorRef, query: String)
+
+case class sendMessageToUser(userRef: ActorRef, query: String)
 
 object MyJsonProtocol extends DefaultJsonProtocol {
   implicit val statusUpdateFormat = jsonFormat4(statusUpdate)
@@ -111,6 +121,7 @@ object MyJsonProtocol extends DefaultJsonProtocol {
   implicit val SecurestatusUpdateFormat = jsonFormat4(secureStatusUpdate)
   implicit val groupTimelineFormat = jsonFormat2(groupTimeline)
   implicit val postMessageObjFormat = jsonFormat3(postMessageObject)
+  implicit val dsObjFormat = jsonFormat3(DSObject)
 }
 
 import server.MyJsonProtocol._
@@ -142,6 +153,7 @@ class UserInfo {
   var tags_timeline = new ListBuffer[statusUpdate]()
   // public Key
   var publicKey: String = _
+  var privateMessages = ListBuffer[privateMessageWithEncryptedAES]()
 }
 
 class FBStats(var Requests: Int, var statusUpdates: Int, var Timeline: Int, var photoPosts: Int) {
@@ -305,16 +317,17 @@ class DigitalSignature(userDatabase: Array[UserInfo]) extends Actor with DS {
       retVal.addProperty("SecretKey", Integer.toString(value))
       sender ! HttpResponse(status = 200, entity = retVal.toString())
 
-    case verifySignature(sender, userId, actual, signature) =>
+    case verifySignature(sender, query) =>
+      val obj = query.parseJson.convertTo[DSObject]
       var result = false
-      var value = userDatabase(userId).DSsecuredRandomInt
+      var value = userDatabase(obj.userId).DSsecuredRandomInt
       try {
-        if (actual.toInt == value)
+        if (obj.actual.toInt == value)
           result = true
       } catch {
         case e: Exception => 0
       }
-      if( result && VerifyHash(userDatabase(userId).publicKey, actual, signature) ){
+      if( result && VerifyHash(userDatabase(obj.userId).publicKey, obj.actual, obj.signature) ){
         sender ! HttpResponse(status = 200)
       }else{
         sender ! HttpResponse(status = 400)
@@ -521,6 +534,23 @@ class getGroupMembersRequest(userDatabase: Array[UserInfo], groupDatabase: util.
   }
 }
 
+class privateMessageHandler(userDatabase: Array[UserInfo]) extends Actor{
+  override def receive = {
+    case sendMessageToUser(userRef, query) =>
+      val msg = query.parseJson.convertTo[privateMessageWithEncryptedAES]
+      val senderID = msg.encAES.userId
+      userDatabase(senderID).privateMessages.+=:(msg)
+      userRef!HttpResponse(status = 200, entity = "OK")
+
+    case getMessage(userRef, query) =>
+      val userID = query.parseJson.convertTo[Int]
+      val messages = userDatabase(userID).privateMessages
+      val retVal = new messagesObject(userID, messages)
+      val response = retVal.toJson.toString
+      userRef!HttpResponse(status= 200, entity = response)
+  }
+}
+
 class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, fbGroup], config: fbConfig) extends Actor {
   var statusUpdateEngine: ActorRef = _
   var photoPostEngine: ActorRef = _
@@ -531,6 +561,7 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
   var getuserDetails: ActorRef = _
   var fbGroupHandler: ActorRef = _
   var getGroupMembersRequest:ActorRef = _
+  var privateMessageHandler: ActorRef = _
 
   InitializeServer()
 
@@ -544,6 +575,7 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
     getuserDetails = context.system.actorOf(Props(new getUserDetails(userDatabase)))
     fbGroupHandler = context.system.actorOf(Props(new FBGroupRequestHandler(userDatabase, groupDatabase)), name = "FBGroupsEngine")
     getGroupMembersRequest = context.system.actorOf(Props(new getGroupMembersRequest(userDatabase, groupDatabase)), name = "FBGroupsHandlerEngine")
+    privateMessageHandler = context.system.actorOf(Props(new privateMessageHandler(userDatabase)))
   }
 
   def receive = {
@@ -588,7 +620,6 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
     case HttpRequest(GET, Uri.Path("/verifySignature"), _, entity: HttpEntity.NonEmpty, _) =>
       digitalSignature ! verifySignature(sender, entity.asString)
 
-
     case HttpRequest(GET, Uri.Path("/getGroupTimeLine"), _, entity: HttpEntity.NonEmpty, _) =>
       fbGroupHandler ! getGroupTimeLine(sender, entity.asString)
 
@@ -597,6 +628,12 @@ class FBServer(userDatabase: Array[UserInfo], groupDatabase: util.HashMap[Int, f
 
     case HttpRequest(POST, Uri.Path("/addMemberToGroup"), _, entity: HttpEntity.NonEmpty, _) =>
       fbGroupHandler ! addMemberToGroup(sender, entity.asString)
+
+    case HttpRequest(POST, Uri.Path("/sendPrivateMessage"), _, entity: HttpEntity.NonEmpty, _) =>
+      privateMessageHandler ! sendMessageToUser(sender, entity.asString)
+
+    case HttpRequest(GET, Uri.Path("/requestPrivateMessages"), _, entity: HttpEntity.NonEmpty, _) =>
+      privateMessageHandler ! getMessage(sender, entity.asString)
 
     case unknown: HttpRequest =>
       sender ! HttpResponse(status = 404, entity = s"$unknown: Sorry, this request cannot be processed.")

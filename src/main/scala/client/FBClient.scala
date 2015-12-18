@@ -29,20 +29,20 @@ case class SecureTimeline(userId:Int, statusUpdatesList: List[SecurestatusUpdate
 case class UserConfig(category: Int, count: Int, Friends: Array[Int], statusUpdateInterval: Int, timelineInterval: Int, profileInterval: Int)
 case class FBConfig(serverIP: String, serverPort: Int, nOfUsers: Int, scale: Double, majorEvent: Int, statsInterval: Int, users: Array[UserConfig])
 case class EncryptedAES(userId: Int , RSAencryptedAESkey: String)
-case class MessageWithEncryptedAES(userId: Int, AESencryptedMessage: String, keys : ListBuffer[EncryptedAES],timestamp: Long)
+case class messageWithEncryptedAES(userId: Int, AESencryptedMessage: String, keys : ListBuffer[EncryptedAES], timestamp: Long)
 
 case class friendsList(userId:Int , friends: ListBuffer[PKey])
 
 object MyJsonProtocol extends DefaultJsonProtocol {
-  implicit val userstatusUpdateFormat = jsonFormat4(statusUpdate)
+  implicit val pKeyFormat = jsonFormat2(PKey)
+  implicit val FBConfigFormat = jsonFormat7(FBConfig)
   implicit val timelineFormat = jsonFormat3(Timeline)
   implicit val userConfigFormat = jsonFormat6(UserConfig)
-  implicit val FBConfigFormat = jsonFormat7(FBConfig)
-  implicit val pKeyFormat = jsonFormat2(PKey)
   implicit val EncryptedAESFormat = jsonFormat2(EncryptedAES)
-  implicit val MessageWithEncryptedAESFormat = jsonFormat4(MessageWithEncryptedAES)
   implicit val SecureTimelineFormat = jsonFormat2(SecureTimeline)
+  implicit val userstatusUpdateFormat = jsonFormat4(statusUpdate)
   implicit val SecurestatusUpdateFormat = jsonFormat4(SecurestatusUpdate)
+  implicit val MessageWithEncryptedAESFormat = jsonFormat4(messageWithEncryptedAES)
 }
 
 import client.MyJsonProtocol._
@@ -55,31 +55,13 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
   val RSAKeyPair = getKeyPair
   var friendlist = None: Option[friendsList]
 
-
-  // TODO: Create AES, private and public keys here
-  // TODO: Send public keys to server
-  // TODO: Get public keys for all friends from server
-//
-//  val plainText = "Hello World1213221"
-//
-//  val ivector = "foo"
-//  println("alice: " + plainText)
-//  val enc = encryptAES(AESkey, plainText, ivector)
-//  val text = decryptAES(enc, AESkey, ivector)
-//  println("bob: " + text)
-
   sendPublicKeyToServer
 
+  waitForstatusUpdateActivity(Random.nextInt(myConfig.statusUpdateInterval))
+  waitForTimelineActivity(Random.nextInt(myConfig.timelineInterval))
+  waitForProfileActivity(Random.nextInt(myConfig.profileInterval))
 
-
-//  waitForstatusUpdateActivity(Random.nextInt(myConfig.statusUpdateInterval))
-//  waitForTimelineActivity(Random.nextInt(myConfig.timelineInterval))
-//  waitForProfileActivity(Random.nextInt(myConfig.profileInterval))
-//  if (eventTime > 0) {
-//    waitForMajorEvent(eventTime)
-//  }
-
-  def sendPublicKeyToServer ={
+  def sendPublicKeyToServer = {
     val pKeyRequestUri = s"http://$server/updatePublicKey"
     val pKeyJSON = new PKey(id, RSAKeyPair.getPublic.toString).toJson
     val future = IO(Http).ask(HttpRequest(POST, Uri(pKeyRequestUri)).withEntity(HttpEntity(pKeyJSON.toString))).mapTo[HttpResponse]
@@ -122,7 +104,7 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
     statusUpdateCount += 1
 
     val timestamp = System.currentTimeMillis()
-    var messageWithEncryptedAES = new MessageWithEncryptedAES(id,"",ListBuffer[EncryptedAES](),timestamp)
+    var messageWithEncryptedAES = new messageWithEncryptedAES(id,"",ListBuffer[EncryptedAES](),timestamp)
 
     val aESkey = generateAESKey
 

@@ -1,26 +1,26 @@
-[info] Updating {file:/home/vineeth/IdeaProjects/FBSimulator/}fbsimulator...
-[debug] :: resolving dependencies :: default#fbsimulator_2.11;1.0
+[info] Updating {file:/home/vineeth/IdeaProjects/SecureFBSimulator/}securefbsimulator...
+[debug] :: resolving dependencies :: fbsimulator#fbsimulator_2.11;1.0
 [debug] 	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool]
 [debug] 	validate = true
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'compile'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.11.7 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@37ac9b41
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@618fe115
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7
 [debug] 	found org.scala-lang#scala-library;2.11.7 in sbt-chain
 [debug] 	[2.11.7] org.scala-lang#scala-library;2.11.7
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-actor_2.11;2.3.13 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.akka#akka-actor_2.11;2.3.13 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-actor_2.11;2.3.13
 [debug] 	found com.typesafe.akka#akka-actor_2.11;2.3.13 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -38,14 +38,14 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
 [info] Resolving com.typesafe.akka#akka-remote_2.11;2.3.13 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.akka#akka-remote_2.11;2.3.13 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-remote_2.11;2.3.13
 [debug] 	found com.typesafe.akka#akka-remote_2.11;2.3.13 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -93,81 +93,30 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->com.google.protobuf#protobuf-java;2.5.0 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
 [info] Resolving org.apache.commons#commons-math3;3.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.commons#commons-math3;3.2 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.apache.commons#commons-math3;3.2
 [debug] 	found org.apache.commons#commons-math3;3.2 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
 [info] Resolving commons-codec#commons-codec;1.10 ...
 [debug] sbt-chain: Checking cache for: dependency: commons-codec#commons-codec;1.10 {compile=[default(compile)]}
-[info] Resolving commons-codec#commons-codec;1.10 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: commons-codec#commons-codec;1.10 {compile=[default(compile)]}
-[debug] 		tried /home/vineeth/.ivy2/local/commons-codec/commons-codec/1.10/ivys/ivy.xml
-[debug] 	local: no ivy file found for commons-codec#commons-codec;1.10
-[debug] 		tried https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom
-[debug] 	public: found md file for commons-codec#commons-codec;1.10
-[debug] 		=> https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom (1.10)
-[debug] downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom
-[debug] 	[SUCCESSFUL ] commons-codec#commons-codec;1.10!commons-codec.pom(pom.original) (117ms)
-[info] Resolving org.apache.commons#commons-parent;35 ...
-[debug] sbt-chain: Checking cache for: dependency: org.apache.commons#commons-parent;35 {}
-[info] Resolving org.apache.commons#commons-parent;35 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.apache.commons#commons-parent;35 {}
-[debug] 		tried /home/vineeth/.ivy2/local/org.apache.commons/commons-parent/35/ivys/ivy.xml
-[debug] 	local: no ivy file found for org.apache.commons#commons-parent;35
-[debug] 		tried https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom
-[debug] 	public: found md file for org.apache.commons#commons-parent;35
-[debug] 		=> https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom (35)
-[debug] downloading https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom
-[debug] 	[SUCCESSFUL ] org.apache.commons#commons-parent;35!commons-parent.pom(pom.original) (163ms)
-[info] Resolving org.apache#apache;15 ...
-[debug] sbt-chain: Checking cache for: dependency: org.apache#apache;15 {}
-[info] Resolving org.apache#apache;15 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.apache#apache;15 {}
-[debug] 		tried /home/vineeth/.ivy2/local/org.apache/apache/15/ivys/ivy.xml
-[debug] 	local: no ivy file found for org.apache#apache;15
-[debug] 		tried https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.pom
-[debug] 	public: found md file for org.apache#apache;15
-[debug] 		=> https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.pom (15)
-[debug] downloading https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.pom
-[debug] 	[SUCCESSFUL ] org.apache#apache;15!apache.pom(pom.original) (108ms)
-[debug] 		tried /home/vineeth/.ivy2/local/org.apache/apache/15/jars/apache.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.jar
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/apache/apache/15/apache-15.jar
-[debug] 		tried http://repo.spray.io/org/apache/apache/15/apache-15.jar
-[debug] CLIENT ERROR: Not Found url=http://repo.spray.io/org/apache/apache/15/apache-15.jar
-[debug] 		tried /home/vineeth/.ivy2/local/org.apache.commons/commons-parent/35/jars/commons-parent.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.jar
-[debug] CLIENT ERROR: Not Found url=https://repo1.maven.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.jar
-[debug] 		tried http://repo.spray.io/org/apache/commons/commons-parent/35/commons-parent-35.jar
-[debug] CLIENT ERROR: Not Found url=http://repo.spray.io/org/apache/commons/commons-parent/35/commons-parent-35.jar
-[debug] 		tried /home/vineeth/.ivy2/local/commons-codec/commons-codec/1.10/jars/commons-codec.jar
-[debug] 		tried https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
-[debug] 	found commons-codec#commons-codec;1.10 in public
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
+[debug] sbt-chain: module revision found in cache: commons-codec#commons-codec;1.10
+[debug] 	found commons-codec#commons-codec;1.10 in sbt-chain
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
 [info] Resolving io.spray#spray-can_2.11;1.3.3 ...
 [debug] sbt-chain: Checking cache for: dependency: io.spray#spray-can_2.11;1.3.3 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: io.spray#spray-can_2.11;1.3.3
 [debug] 	found io.spray#spray-can_2.11;1.3.3 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -260,14 +209,14 @@
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-http_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
 [info] Resolving io.spray#spray-json_2.11;1.3.2 ...
 [debug] sbt-chain: Checking cache for: dependency: io.spray#spray-json_2.11;1.3.2 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: io.spray#spray-json_2.11;1.3.2
 [debug] 	found io.spray#spray-json_2.11;1.3.2 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -275,14 +224,14 @@
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
 [info] Resolving io.spray#spray-routing_2.11;1.3.3 ...
 [debug] sbt-chain: Checking cache for: dependency: io.spray#spray-routing_2.11;1.3.3 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: io.spray#spray-routing_2.11;1.3.3
 [debug] 	found io.spray#spray-routing_2.11;1.3.3 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -361,14 +310,14 @@
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->com.chuusai#shapeless_2.11;1.2.4 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->com.chuusai#shapeless_2.11;1.2.4 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
 [info] Resolving io.spray#spray-client_2.11;1.3.3 ...
 [debug] sbt-chain: Checking cache for: dependency: io.spray#spray-client_2.11;1.3.3 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: io.spray#spray-client_2.11;1.3.3
 [debug] 	found io.spray#spray-client_2.11;1.3.3 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -394,22 +343,22 @@
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-httpx_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
 [info] Resolving com.google.code.gson#gson;2.2.4 ...
 [debug] sbt-chain: Checking cache for: dependency: com.google.code.gson#gson;2.2.4 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.google.code.gson#gson;2.2.4
 [debug] 	found com.google.code.gson#gson;2.2.4 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
 [info] Resolving org.json4s#json4s-native_2.11;3.2.11 ...
 [debug] sbt-chain: Checking cache for: dependency: org.json4s#json4s-native_2.11;3.2.11 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.json4s#json4s-native_2.11;3.2.11
 [debug] 	found org.json4s#json4s-native_2.11;3.2.11 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->compile(*)]
@@ -518,17 +467,17 @@
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.json4s#json4s-core_2.11;3.2.11 [runtime->runtime(*)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.json4s#json4s-core_2.11;3.2.11 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
 [debug] resolving dependencies for configuration 'runtime'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [runtime]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [runtime]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -540,10 +489,10 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -571,18 +520,18 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->compile]
 [debug] excluding dependency: jfree#jcommon;1.0.12 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
 [debug] excluding dependency: jfree#jfreechart;1.0.8a {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -649,10 +598,10 @@
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-http_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -660,10 +609,10 @@
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -722,10 +671,10 @@
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -749,14 +698,14 @@
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-httpx_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->compile(*)]
@@ -834,18 +783,18 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
 [debug] resolving dependencies for configuration 'test'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [test]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [runtime]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [test]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [runtime]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -857,10 +806,10 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -888,18 +837,18 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->compile]
 [debug] excluding dependency: jfree#jcommon;1.0.12 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
 [debug] excluding dependency: jfree#jfreechart;1.0.8a {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -966,10 +915,10 @@
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-http_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -977,10 +926,10 @@
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1039,10 +988,10 @@
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1066,14 +1015,14 @@
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-httpx_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->compile(*)]
@@ -1151,21 +1100,21 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
 [debug] resolving dependencies for configuration 'provided'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [provided]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [provided]
 [debug] resolving dependencies for configuration 'optional'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [optional]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [optional]
 [debug] resolving dependencies for configuration 'compile-internal'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile-internal]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile-internal]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -1177,10 +1126,10 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -1208,18 +1157,18 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->compile]
 [debug] excluding dependency: jfree#jcommon;1.0.12 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
 [debug] excluding dependency: jfree#jfreechart;1.0.8a {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1286,10 +1235,10 @@
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-http_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1297,10 +1246,10 @@
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1359,10 +1308,10 @@
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1386,14 +1335,14 @@
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-httpx_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->compile(*)]
@@ -1471,20 +1420,20 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [optional]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [provided]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [optional]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [provided]
 [debug] resolving dependencies for configuration 'runtime-internal'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [runtime-internal]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [runtime]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [runtime-internal]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [runtime]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -1496,10 +1445,10 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -1527,18 +1476,18 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->compile]
 [debug] excluding dependency: jfree#jcommon;1.0.12 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
 [debug] excluding dependency: jfree#jfreechart;1.0.8a {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1605,10 +1554,10 @@
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-http_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1616,10 +1565,10 @@
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1678,10 +1627,10 @@
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1705,14 +1654,14 @@
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-httpx_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->compile(*)]
@@ -1790,20 +1739,20 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [optional]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [optional]
 [debug] resolving dependencies for configuration 'test-internal'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [test-internal]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [test]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [runtime]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [test-internal]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [test]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [runtime]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -1815,10 +1764,10 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [runtime->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.typesafe.akka#akka-actor_2.11;2.3.13->com.typesafe#config;1.2.1 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-actor_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->compile]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.scala-lang#scala-library;2.11.5 [compile->compile(*)]
@@ -1846,18 +1795,18 @@
 [debug] == resolving dependencies com.typesafe.akka#akka-remote_2.11;2.3.13->org.uncommons.maths#uncommons-maths;1.2.2a [runtime->compile]
 [debug] excluding dependency: jfree#jcommon;1.0.12 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
 [debug] excluding dependency: jfree#jfreechart;1.0.8a {compile=[compile(*), master(compile)], runtime=[runtime(*)]} in runtime
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.typesafe.akka#akka-remote_2.11;2.3.13 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.apache.commons#commons-math3;3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->commons-codec#commons-codec;1.10 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1924,10 +1873,10 @@
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-http_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-can_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-can_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1935,10 +1884,10 @@
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-json_2.11;1.3.2->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-json_2.11;1.3.2 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-routing_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -1997,10 +1946,10 @@
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies com.chuusai#shapeless_2.11;1.2.4->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-routing_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->org.scala-lang#scala-library;2.11.6 [compile->compile(*)]
@@ -2024,14 +1973,14 @@
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-httpx_2.11;1.3.3 [runtime->compile]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->runtime(*)]
 [debug] == resolving dependencies io.spray#spray-client_2.11;1.3.3->io.spray#spray-util_2.11;1.3.3 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->io.spray#spray-client_2.11;1.3.3 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->com.google.code.gson#gson;2.2.4 [compile->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->default(compile)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->compile]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.json4s#json4s-native_2.11;3.2.11->org.scala-lang#scala-library;2.11.0 [compile->compile(*)]
@@ -2109,26 +2058,26 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [optional]
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [provided]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.json4s#json4s-native_2.11;3.2.11 [compile->master]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [optional]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [provided]
 [debug] resolving dependencies for configuration 'plugin'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [plugin]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [plugin]
 [debug] resolving dependencies for configuration 'sources'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [sources]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [sources]
 [debug] resolving dependencies for configuration 'docs'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [docs]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [docs]
 [debug] resolving dependencies for configuration 'pom'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [pom]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [pom]
 [debug] resolving dependencies for configuration 'scala-tool'
-[debug] == resolving dependencies for default#fbsimulator_2.11;1.0 [scala-tool]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->default]
+[debug] == resolving dependencies for fbsimulator#fbsimulator_2.11;1.0 [scala-tool]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->default]
 [info] Resolving org.scala-lang#scala-compiler;2.11.7 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.11.7 {scala-tool=[default, optional(default)]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.11.7
 [debug] 	found org.scala-lang#scala-compiler;2.11.7 in sbt-chain
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->compile]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang#scala-library;2.11.7 [compile->master(compile)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang#scala-library;2.11.7 [compile->compile(*)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang#scala-library;2.11.7 [compile->default]
@@ -2187,31 +2136,26 @@
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-xml_2.11;1.0.4 [runtime->compile]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [runtime->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->optional(default)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-compiler;2.11.7 [scala-tool->optional(default)]
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->jline#jline;2.12.1 [optional->master(compile)]
 [info] Resolving jline#jline;2.12.1 ...
 [debug] sbt-chain: Checking cache for: dependency: jline#jline;2.12.1 {optional=[compile(*), master(compile)]}
 [debug] sbt-chain: module revision found in cache: jline#jline;2.12.1
 [debug] 	found jline#jline;2.12.1 in sbt-chain
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.11.7->jline#jline;2.12.1 [optional->compile(*)]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->default]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->runtime]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->compile]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->master]
-[debug] == resolving dependencies default#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->optional(default)]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->default]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->runtime]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->compile]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->master]
+[debug] == resolving dependencies fbsimulator#fbsimulator_2.11;1.0->org.scala-lang#scala-library;2.11.7 [scala-tool->optional(default)]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.11.7!scala-library.jar
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.13!akka-actor_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-remote_2.11;2.3.13!akka-remote_2.11.jar
 [debug] 	[NOT REQUIRED] org.apache.commons#commons-math3;3.2!commons-math3.jar
-[debug] 		tried https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
-[info] downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
-[debug] 	public: downloading https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
-[info] 	[SUCCESSFUL ] commons-codec#commons-codec;1.10!commons-codec.jar (171ms)
+[debug] 	[NOT REQUIRED] commons-codec#commons-codec;1.10!commons-codec.jar
 [debug] 	[NOT REQUIRED] io.spray#spray-can_2.11;1.3.3!spray-can_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] io.spray#spray-json_2.11;1.3.2!spray-json_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] io.spray#spray-routing_2.11;1.3.3!spray-routing_2.11.jar(bundle)
@@ -2243,19 +2187,19 @@
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] jline#jline;2.12.1!jline.jar
-[debug] :: resolution report :: resolve 3379ms :: artifacts dl 201ms
-[debug] 	report for default#fbsimulator_2.11;1.0 compile produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-compile.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 runtime produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-runtime.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 test produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-test.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 provided produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-provided.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 optional produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-optional.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 compile-internal produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-compile-internal.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 runtime-internal produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-runtime-internal.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 test-internal produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-test-internal.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 plugin produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-plugin.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 sources produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-sources.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 docs produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-docs.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 pom produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-pom.xml
-[debug] 	report for default#fbsimulator_2.11;1.0 scala-tool produced in /home/vineeth/IdeaProjects/FBSimulator/target/resolution-cache/reports/default-fbsimulator_2.11-scala-tool.xml
-[debug] 	resolve done (3379ms resolve - 201ms download)
+[debug] :: resolution report :: resolve 2347ms :: artifacts dl 99ms
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 compile produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-compile.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 runtime produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-runtime.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 test produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-test.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 provided produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-provided.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 optional produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-optional.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 compile-internal produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-compile-internal.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 runtime-internal produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-runtime-internal.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 test-internal produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-test-internal.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 plugin produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-plugin.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 sources produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-sources.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 docs produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-docs.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 pom produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-pom.xml
+[debug] 	report for fbsimulator#fbsimulator_2.11;1.0 scala-tool produced in /home/vineeth/IdeaProjects/SecureFBSimulator/target/resolution-cache/reports/fbsimulator-fbsimulator_2.11-scala-tool.xml
+[debug] 	resolve done (2347ms resolve - 99ms download)
 [info] Done updating.

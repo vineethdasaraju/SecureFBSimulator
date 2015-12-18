@@ -4,12 +4,12 @@ import akka.actor._
 import akka.io.IO
 import akka.pattern.ask
 import akka.util.Timeout
-import client.Security._
 import server.DS
 import spray.can.Http
 import spray.http.HttpMethods._
 import spray.http._
 import spray.json._
+
 import scala.collection.mutable.ListBuffer
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -17,42 +17,67 @@ import scala.concurrent.duration._
 import scala.util.Random
 
 case class statusUpdateActivity()
-case class timelineActivity()
-case class securedTimelineActivity()
-case class profileActivity()
-case class majorEvent()
-case class PKey(userId: Int, pkey: String)
-case class statusUpdate(userId: Int, tags: List[Int], content: String, timestamp: Long)
-case class SecurestatusUpdate(userId: Int, content: String,RSAencryptedAESkey: String , timestamp: Long)
-case class Timeline(userId: Int, timelineType: Int, statusUpdatesList: List[statusUpdate])
-case class SecureTimeline(userId:Int, statusUpdatesList: List[SecurestatusUpdate])
-case class UserConfig(category: Int, count: Int, Friends: Array[Int], statusUpdateInterval: Int, timelineInterval: Int, profileInterval: Int)
-case class FBConfig(serverIP: String, serverPort: Int, nOfUsers: Int, scale: Double, majorEvent: Int, statsInterval: Int, users: Array[UserConfig])
-case class EncryptedAES(userId: Int , RSAencryptedAESkey: String)
-case class messageWithEncryptedAES(userId: Int, AESencryptedMessage: String, keys : ListBuffer[EncryptedAES], timestamp: Long)
 
-case class friendsList(userId:Int , friends: ListBuffer[PKey])
+case class timelineActivity()
+
+case class securedTimelineActivity()
+
+case class profileActivity()
+
+case class PKey(userId: Int, pkey: String)
+
+case class getGroupTimeLine(groupID: Int)
+
+case class postMessageToGroup(groupID: Int, message: String)
+
+case class addMemberToGroup(uID: Int, groupID: Int)
+
+case class groupTimeline(groupID: Int, listBuffer: ListBuffer[messageWithEncryptedAES])
+
+case class statusUpdate(userId: Int, tags: List[Int], content: String, timestamp: Long)
+
+case class SecurestatusUpdate(userId: Int, content: String, RSAencryptedAESkey: String, timestamp: Long)
+
+case class Timeline(userId: Int, timelineType: Int, statusUpdatesList: List[statusUpdate])
+
+case class SecureTimeline(userId: Int, statusUpdatesList: List[SecurestatusUpdate])
+
+case class addUserToGroup(groupID: Int, userID: Int)
+
+case class UserConfig(category: Int, count: Int, Friends: Array[Int], statusUpdateInterval: Int, timelineInterval: Int, profileInterval: Int, groups: ListBuffer[Int])
+
+case class FBConfig(serverIP: String, serverPort: Int, nOfUsers: Int, scale: Double, majorEvent: Int, statsInterval: Int, users: Array[UserConfig])
+
+case class EncryptedAES(userId: Int, RSAencryptedAESkey: String)
+
+case class messageWithEncryptedAES(userId: Int, AESencryptedMessage: String, keys: ListBuffer[EncryptedAES], timestamp: Long)
+
+case class friendsList(userId: Int, friends: ListBuffer[PKey])
+
+case class postMessageObject(groupID: Int, message: messageWithEncryptedAES, timestamp: Long)
 
 object MyJsonProtocol extends DefaultJsonProtocol {
   implicit val pKeyFormat = jsonFormat2(PKey)
   implicit val FBConfigFormat = jsonFormat7(FBConfig)
   implicit val timelineFormat = jsonFormat3(Timeline)
-  implicit val userConfigFormat = jsonFormat6(UserConfig)
+  implicit val userConfigFormat = jsonFormat7(UserConfig)
   implicit val EncryptedAESFormat = jsonFormat2(EncryptedAES)
   implicit val SecureTimelineFormat = jsonFormat2(SecureTimeline)
   implicit val userstatusUpdateFormat = jsonFormat4(statusUpdate)
   implicit val SecurestatusUpdateFormat = jsonFormat4(SecurestatusUpdate)
   implicit val MessageWithEncryptedAESFormat = jsonFormat4(messageWithEncryptedAES)
+  implicit val addUserToGroupFormat = jsonFormat2(addUserToGroup)
+  implicit val groupTimelineFormat = jsonFormat2(groupTimeline)
 }
 
 import client.MyJsonProtocol._
 
-class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTime: Int)(implicit system: ActorSystem) extends Actor with AES with RSA with DS{
-  var scheduler: Cancellable = _
-  var statusUpdateCount: Int = _
+class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTime: Int)(implicit system: ActorSystem) extends Actor with AES with RSA with DS {
   implicit val timeout = Timeout(60 seconds)
   val AESkey = generateAESKey
   val RSAKeyPair = getKeyPair
+  var scheduler: Cancellable = _
+  var statusUpdateCount: Int = _
   var friendlist = None: Option[friendsList]
 
   sendPublicKeyToServer
@@ -69,6 +94,106 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
     println(response.entity.toString)
   }
 
+  def securedPostStatusUpdate(message: String) {
+    getFriendsList()
+    statusUpdateCount += 1
+    val timestamp = System.currentTimeMillis()
+    var messageWithEncryptedAES = new messageWithEncryptedAES(id, "", ListBuffer[EncryptedAES](), timestamp)
+    val aESkey = generateAESKey
+    messageWithEncryptedAES.AESencryptedMessage += encryptAESbase64(aESkey, message)
+    for (friend <- friendlist.get.friends) {
+      messageWithEncryptedAES.keys += new EncryptedAES(friend.userId, encryptRSAaESkey(aESkey, StringToPubRsa(friend.pkey)))
+    }
+    val jsonstatusUpdate = messageWithEncryptedAES.toJson
+    val future = IO(Http).ask(HttpRequest(POST, Uri(s"http://$server/SecureStatusUpdate")).withEntity(HttpEntity(jsonstatusUpdate.toString))).mapTo[HttpResponse]
+    val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+  }
+
+  def getFriendsList() {
+    friendlist match {
+      case None => {
+        val future = IO(Http).ask(HttpRequest(GET, Uri(s"http://$server/getFriendsList")).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
+        val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+        val jsonFriendsList = response.entity.asString.parseJson
+        friendlist = Some(jsonFriendsList.convertTo[friendsList])
+      }
+    }
+  }
+
+  def receive = {
+
+    case statusUpdateActivity() =>
+      poststatusUpdate(null)
+      waitForstatusUpdateActivity(myConfig.statusUpdateInterval)
+
+    case profileActivity() =>
+      val future = IO(Http).ask(HttpRequest(GET, Uri(s"http://$server/userTimeline")).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
+      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+      waitForProfileActivity(myConfig.profileInterval)
+
+    case timelineActivity() =>
+      var pick = Random.nextInt(10)
+      var timelineType = 0
+      var requestUri = s"http://$server/homeTimeline"
+      if (pick % 3 == 0) {
+        timelineType = 1
+        requestUri = s"http://$server/tagsTimeline"
+      }
+      val future = IO(Http).ask(HttpRequest(GET, Uri(requestUri)).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
+      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+      val jsonTimeline = response.entity.asString.parseJson
+      val timeline = jsonTimeline.convertTo[Timeline]
+      if (Random.nextBoolean && (timeline.statusUpdatesList.length > 0)) {
+        val statusUpdateNum = Random.nextInt(timeline.statusUpdatesList.length)
+        val restatusUpdate = timeline.statusUpdatesList(statusUpdateNum)
+        poststatusUpdate(restatusUpdate)
+      }
+      waitForTimelineActivity(myConfig.timelineInterval)
+
+    case securedTimelineActivity() =>
+      var requestUri = s"http://$server/securedTimeline"
+      val future = IO(Http).ask(HttpRequest(GET, Uri(requestUri)).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
+      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+      val jsonTimeline = response.entity.asString.parseJson
+      val securetimeline = jsonTimeline.convertTo[SecureTimeline]
+      for (securepost <- securetimeline.statusUpdatesList) {
+        println(decryptAESbase64(securepost.content, decryptRSAaESkey(securepost.RSAencryptedAESkey, RSAKeyPair.getPrivate)))
+      }
+      waitForTimelineActivity(myConfig.timelineInterval)
+
+    case postMessageToGroup(groupID, message) =>
+      var requestURI = s"http://$server/postMessageToGroup"
+      val timestamp = System.currentTimeMillis()
+      var messageWithEncryptedAES = new messageWithEncryptedAES(id, "", ListBuffer[EncryptedAES](), timestamp)
+      val aESkey = generateAESKey
+      messageWithEncryptedAES.AESencryptedMessage += encryptAESbase64(aESkey, message)
+      for (friend <- friendlist.get.friends) {
+        messageWithEncryptedAES.keys += new EncryptedAES(friend.userId, encryptRSAaESkey(aESkey, StringToPubRsa(friend.pkey)))
+      }
+      val jsonstatusUpdate = new postMessageObject(groupID, messageWithEncryptedAES, timestamp).toJson
+      val future = IO(Http).ask(HttpRequest(POST, Uri(requestURI)).withEntity(HttpEntity(jsonstatusUpdate.toString))).mapTo[HttpResponse]
+      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+
+    case getGroupTimeLine(groupID: Int) =>
+      val requestURI = s"http://$server/getGroupTimeLine"
+      val future = IO(Http).ask(HttpRequest(GET, Uri(requestURI)).withEntity(HttpEntity(groupID.toString))).mapTo[HttpResponse]
+      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+      val jsonTimeline = response.entity.asString.parseJson
+      val timeline = jsonTimeline.convertTo[Timeline]
+      if (Random.nextBoolean && (timeline.statusUpdatesList.length > 0)) {
+        val statusUpdateNum = Random.nextInt(timeline.statusUpdatesList.length)
+        val restatusUpdate = timeline.statusUpdatesList(statusUpdateNum)
+        poststatusUpdate(restatusUpdate)
+      }
+      waitForTimelineActivity(myConfig.timelineInterval)
+
+    case addMemberToGroup(groupID, uID) =>
+      var requestURI = s"http://$server/addMemberToGroup"
+      val request = new addUserToGroup(groupID, uID)
+      val future = IO(Http).ask(HttpRequest(POST, Uri(requestURI)).withEntity(HttpEntity(request.toJson.toString))).mapTo[HttpResponse]
+      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
+  }
+
   def waitForstatusUpdateActivity(waitTime: Int) {
     scheduler = context.system.scheduler.scheduleOnce((new FiniteDuration(waitTime, MILLISECONDS)), self, statusUpdateActivity())
   }
@@ -79,44 +204,6 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
 
   def waitForProfileActivity(waitTime: Int) {
     scheduler = context.system.scheduler.scheduleOnce((new FiniteDuration(waitTime, MILLISECONDS)), self, profileActivity())
-  }
-
-  def waitForMajorEvent(waitTime: Int) {
-    scheduler = context.system.scheduler.scheduleOnce((new FiniteDuration(waitTime, MILLISECONDS)), self, majorEvent())
-  }
-
-  def getFriendsList(){
-
-    friendlist  match {
-      case None => {
-        val future = IO(Http).ask(HttpRequest(GET, Uri(s"http://$server/getFriendsList")).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
-        val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
-        val jsonFriendsList = response.entity.asString.parseJson
-        friendlist = Some( jsonFriendsList.convertTo[friendsList])
-      }
-    }
-
-  }
-
-  def securedPostStatusUpdate(message:String){
-
-    getFriendsList()
-    statusUpdateCount += 1
-
-    val timestamp = System.currentTimeMillis()
-    var messageWithEncryptedAES = new messageWithEncryptedAES(id,"",ListBuffer[EncryptedAES](),timestamp)
-
-    val aESkey = generateAESKey
-
-    messageWithEncryptedAES.AESencryptedMessage += encryptAESbase64(aESkey,message)
-    for(friend <- friendlist.get.friends){
-      messageWithEncryptedAES.keys += new EncryptedAES(friend.userId, encryptRSAaESkey(aESkey,StringToPubRsa( friend.pkey )))
-    }
-
-    val jsonstatusUpdate = messageWithEncryptedAES.toJson
-    val future = IO(Http).ask(HttpRequest(POST, Uri(s"http://$server/SecureStatusUpdate")).withEntity(HttpEntity(jsonstatusUpdate.toString))).mapTo[HttpResponse]
-    val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
-
   }
 
   def poststatusUpdate(statusUpdate: statusUpdate) {
@@ -140,56 +227,6 @@ class User(id: Int, server: String, myConfig: UserConfig, nOfUsers: Int, eventTi
     val jsonstatusUpdate = new statusUpdate(id, tags, content, timestamp).toJson
     val future = IO(Http).ask(HttpRequest(POST, Uri(s"http://$server/statusUpdate")).withEntity(HttpEntity(jsonstatusUpdate.toString))).mapTo[HttpResponse]
     val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
-  }
-
-  def receive = {
-    case majorEvent() =>
-      poststatusUpdate(null)
-      waitForMajorEvent(eventTime)
-
-    case statusUpdateActivity() =>
-      poststatusUpdate(null)
-      waitForstatusUpdateActivity(myConfig.statusUpdateInterval)
-
-    case profileActivity() =>
-      val future = IO(Http).ask(HttpRequest(GET, Uri(s"http://$server/userTimeline")).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
-      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
-      waitForProfileActivity(myConfig.profileInterval)
-
-    case timelineActivity() =>
-      var pick = Random.nextInt(10)
-      // Timeline type: 0 - Home timeline
-      //                1 - tags timeline
-      var timelineType = 0
-      var requestUri = s"http://$server/homeTimeline"
-      if (pick % 3 == 0) {
-        timelineType = 1
-        requestUri = s"http://$server/tagsTimeline"
-      }
-
-      val future = IO(Http).ask(HttpRequest(GET, Uri(requestUri)).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
-      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
-      val jsonTimeline = response.entity.asString.parseJson
-      val timeline = jsonTimeline.convertTo[Timeline]
-      if (Random.nextBoolean && (timeline.statusUpdatesList.length > 0)) {
-        val statusUpdateNum = Random.nextInt(timeline.statusUpdatesList.length)
-        val restatusUpdate = timeline.statusUpdatesList(statusUpdateNum)
-        poststatusUpdate(restatusUpdate)
-      }
-      waitForTimelineActivity(myConfig.timelineInterval)
-
-    case securedTimelineActivity() =>
-      var requestUri = s"http://$server/securedTimeline"
-
-      val future = IO(Http).ask(HttpRequest(GET, Uri(requestUri)).withEntity(HttpEntity(id.toString))).mapTo[HttpResponse]
-      val response = Await.result(future, timeout.duration).asInstanceOf[HttpResponse]
-      val jsonTimeline = response.entity.asString.parseJson
-      val securetimeline = jsonTimeline.convertTo[SecureTimeline]
-      for(securepost <- securetimeline.statusUpdatesList){
-        println( decryptAESbase64(securepost.content , decryptRSAaESkey(securepost.RSAencryptedAESkey,RSAKeyPair.getPrivate)))
-      }
-      waitForTimelineActivity(myConfig.timelineInterval)
-
   }
 }
 
@@ -216,8 +253,5 @@ object Client extends App {
       system.actorOf(Props(new User(nodeCount, server, config.users(category - 1), (config.nOfUsers.toDouble * config.scale).toInt, eventTime)), name = "user" + nodeCount.toString)
     }
   }
-
-
-
   println("All users created.")
 }
